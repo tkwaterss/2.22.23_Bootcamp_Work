@@ -33,6 +33,14 @@ WHERE playlist_id IN (
   WHERE playlist_id = 5
 );
 
+SELECT t.name
+FROM track AS t
+JOIN playlist_track AS pt
+ON t.track_id = pt.track_id
+JOIN playlist AS p
+ON pt.playlist_id = p.playlist_id
+WHERE p.playlist_id = 5;
+
 SELECT name
 FROM track
 WHERE genre_id IN (
